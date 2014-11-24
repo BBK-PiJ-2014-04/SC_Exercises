@@ -64,10 +64,38 @@ public class IntegerTreeNode {
 	
 	public int getMin() {
 		if(left != null) {
-			return right.getMax();
+			return left.getMin();
 		}
 		else {
 			return this.value;
+		}
+	}
+	
+	public String ToString() {
+		return "[" + this.value + ((left != null) ? " L" + left.ToString() : " L[]") + ((right != null) ? " R" + right.ToString() : " R[]") + "]";
+	}	
+	
+	public int depth() {
+		int leftDepth = 0;
+		int rightDepth = 0;
+		if(left == null && right == null) {
+			return 0;
+		}
+		else {
+			if(left != null){
+				leftDepth = left.depth();
+			}
+			if(right != null){
+				rightDepth = right.depth();
+			}
+		}
+		
+		if(leftDepth > rightDepth) {
+			return leftDepth + 1;
+		}
+		else
+		{
+			return rightDepth + 1;
 		}
 	}
 }
