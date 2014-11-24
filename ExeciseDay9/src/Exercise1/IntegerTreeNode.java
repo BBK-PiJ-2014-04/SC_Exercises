@@ -29,6 +29,45 @@ public class IntegerTreeNode {
 		}
 	}
 	
+	public boolean remove(int newNumber) {
+		if(left != null && left.value == newNumber)
+		{
+			this.left = left.left;
+			return true;
+		}
+		
+		if(right != null && right.value == newNumber)
+		{
+			if(left != null)
+				this.right = left.left;
+			else if(right != null)
+				this.right = right.right;
+			else
+				this.right = null;
+			return true;
+		}
+		
+		if (newNumber > this.value) {
+			if(right != null) {
+				return right.remove(newNumber);
+			}
+			else {
+				System.out.println("The number is not part of the tree");
+				return false;
+			}
+				
+		}
+		else {
+			if(left != null) {
+				return left.remove(newNumber);
+			}
+			else {
+				System.out.println("The number is not part of the tree");
+				return false;
+			}
+		}
+	}
+	
 	public boolean contains(int n) {
 		if (n == this.value) {
 			return true;

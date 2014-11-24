@@ -10,6 +10,11 @@ public class TestProgram {
 		myhead.add(11);
 		myhead.add(12);
 		
+		myhead.remove(12);
+		myhead.remove(8);
+		myhead.remove(11);
+		myhead.remove(13);
+		
 		
 		System.out.println(Integer.toString(myhead.getMax()));
 		System.out.println(Integer.toString(myhead.getMin()));
