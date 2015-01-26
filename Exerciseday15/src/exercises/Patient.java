@@ -6,7 +6,7 @@ public class Patient {
 	private Patient nextPatient;
 	
 	public Patient(String name, int age) {
-		if(age < 0 && age > 130) throw new RuntimeException("The guy is either yet to be born or Methuselah");
+		if(age < 0 || age > 130) throw new RuntimeException("The age parameter doesn't seem to be plausible");
 		this.name = name;
 		this.age = age;
 	}

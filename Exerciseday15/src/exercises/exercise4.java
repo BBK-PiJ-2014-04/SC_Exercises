@@ -3,8 +3,11 @@ package exercises;
 import java.util.Scanner;
 
 public class exercise4 {
-	Patient listOfPatients;
-	public void addPatient() {
+	
+	
+	
+	public static void addPatient() {
+		Patient listOfPatients = null;
 		String name;
 		int age;
 		Scanner in = new Scanner(System.in);
@@ -18,5 +21,10 @@ public class exercise4 {
 		else {
 			listOfPatients.addPatient(new Patient(name,age));
 		}
+	}
+	
+	public static void main(String [] args)
+	{
+		addPatient();
 	}
 }
