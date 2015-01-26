@@ -22,14 +22,18 @@ public class Exercise2 {
 			//this shouldn't be here, as it is unreachable (I've commented it out to make the code compilable). The first catch block will catch all the exceptions.
 	}
 	
-	public static void CorrectExHandler(){
+	public static void CorrectExHandler(int exceptionType){
 		List list = new List(); 
 		String newElement = "test";
 		try {
 			list.add(newElement);
 			list = null;
-			list.add(newElement);
-			int f = 1/0;
+			if(exceptionType == 0) {
+				list.add(newElement); //Null pointer exception, depending on other code
+			}
+			else {
+				int f = 1/0; //creating a code that always throw a Division By Zero exception, no matter the other code
+			}
 			} catch (NullPointerException ex) {
 				System.out.println("Methods have been called on Null Objects");
 				ex.printStackTrace();
@@ -41,7 +45,8 @@ public class Exercise2 {
 	
 	public static void main(String [] args)
 	{
-		CorrectExHandler();
+		CorrectExHandler(0);
+		//CorrectExHandler(1);
 	}
 	
 }
