@@ -9,7 +9,7 @@ public class Exercise3 {
 		double num = 0;
 		double sum = 0;
 		System.out.println("Please enter 10 number to calculate their mean average");
-		for(int i = 0; i < 10; i++) {
+		for(int i = 1; i < 11; i++) {
 			Scanner in = new Scanner(System.in);
 		    System.out.println("Enter the " + i + " number:");
 		    try {
@@ -20,11 +20,11 @@ public class Exercise3 {
 		    	i--;
 		    } 
 		}
-		return avg;
+		return sum/10;
 	}
 	
 	public static void main(String [] args)
 	{
-		meanAverage();
+		System.out.println(meanAverage());
 	}
 }
