@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercise3 {
 	
-	public double meanAverage() {
+	public static double meanAverage() {
 		double avg = 0;
 		double num = 0;
 		double sum = 0;
@@ -12,10 +12,20 @@ public class Exercise3 {
 		for(int i = 0; i < 10; i++) {
 			Scanner in = new Scanner(System.in);
 		    System.out.println("Enter the " + i + " number");
-		    num = Double.parseDouble(in.nextLine());
-		    sum += num;
+		    try {
+		    	num = Double.parseDouble(in.nextLine());
+		    	sum += num;
+		    } catch (Exception ex) {
+		    	System.out.println("The last input inserted was not a number");
+		    } finally {
+		    	i--;
+		    }
 		}
 		return avg;
 	}
-
+	
+	public static void main(String [] args)
+	{
+		meanAverage();
+	}
 }
