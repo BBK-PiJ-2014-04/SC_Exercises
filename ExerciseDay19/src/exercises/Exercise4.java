@@ -48,7 +48,8 @@ public class Exercise4 implements Runnable{
 	public void run() {
 		try {
 			Thread.sleep(milliseconds);
-			FinishedTask += ((Integer)this.tasknumber).toString() + ", ";
+			
+			FinishedTask += (FinishedTask.isEmpty()) ? ((Integer)this.tasknumber).toString() : "," + ((Integer)this.tasknumber).toString(); 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
